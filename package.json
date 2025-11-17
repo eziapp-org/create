@@ -10,7 +10,11 @@
     "types": "dist/index.d.ts",
     "files": [
         "dist/",
-        "templates"
+        "templates/*",
+        "!**/node_modules/",
+        "!**/build/",
+        "!**/temp/",
+        "!**/dist/"
     ],
     "bin": {
         "create-eziapp": "dist/index.js"
