@@ -4,7 +4,7 @@ import { puts, stripAnsiCodes } from './utils';
 function exitOnCtrlCOrEsc(data: Buffer) {
     const str = data.toString();
     if (str === '\u0003' || str === '\u001b') {
-        puts(chalk.red('\nOperation cancelled by user.\n'));
+        puts(chalk.red('\n\nOperation cancelled by user.\n'));
         process.exit();
     }
 }
