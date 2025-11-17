@@ -41,6 +41,20 @@ function isDirectoryEmpty(dirPath: string) {
     return files.length === 0;
 }
 
+function getTemplatePath(templateName: string) {
+    const templatePaths = [
+        path.join(__dirname, '..', '..', 'templates', templateName),
+        path.join(__dirname, '..', 'templates', templateName)
+    ];
+    for (const templatePath of templatePaths) {
+        if (fs.existsSync(templatePath)) {
+            return templatePath;
+        }
+    }
+    puts(chalk.red(`✖  Template "${templateName}" not found.\n`));
+    process.exit(1);
+}
+
 export async function FromHelloWorld() {
     label(chalk.green('☘  ') + chalk.bold('Project name:'));
     const projectName = await input('eziapp-project', invalidProjectNameChars);
@@ -61,7 +75,7 @@ export async function FromHelloWorld() {
         }
     }
 
-    const HelloWorldTemplatePath = path.join(__dirname, '..', 'templates', 'helloworld');
+    const HelloWorldTemplatePath = getTemplatePath('helloworld');
     copyDirSync(HelloWorldTemplatePath, projectPath, excludeDirs);
 
     puts(chalk.green('✔  Hello World project setup is complete!\n\n'));
