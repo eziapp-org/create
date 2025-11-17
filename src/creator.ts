@@ -6,15 +6,17 @@ import {
 import { puts } from './utils';
 import chalk from 'chalk';
 
+const invalidProjectNameChars = /[\s\\/:"*?<>|]+/;
+
 
 export async function FromHelloWorld() {
     label('☘  ' + chalk.bold('Project name:'));
-    const projectName = await input('eziapp-project');
+    const projectName = await input('eziapp-project', invalidProjectNameChars);
 }
 
 export async function FromTemplate() {
     label('☘  ' + chalk.bold('Project name:'));
-    const projectName = await input('eziapp-project');
+    const projectName = await input('eziapp-project', invalidProjectNameChars);
 
     label('☘  ' + chalk.bold('Select framework:'));
     const framework = await options([

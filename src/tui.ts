@@ -9,7 +9,7 @@ function exitOnCtrlCOrEsc(data: Buffer) {
     }
 }
 
-async function getLine(defaultValue = '') {
+async function getLine(defaultValue = '', excludePattern?: RegExp) {
     return new Promise<string>((resolve) => {
         process.stdin.setRawMode(true);
         process.stdin.resume();
@@ -41,6 +41,9 @@ async function getLine(defaultValue = '') {
                     return;
                 }
                 if (str < ' ' || str > '~') {
+                    return;
+                }
+                if (excludePattern && excludePattern.test(str)) {
                     return;
                 }
                 value += str;
@@ -90,8 +93,8 @@ export function label(text: string) {
     puts(`${text}\n`);
 }
 
-export async function input(defaultValue = '') {
-    const line = await getLine(defaultValue);
+export async function input(defaultValue = '', excludePattern?: RegExp) {
+    const line = await getLine(defaultValue, excludePattern);
     return line;
 }
 
