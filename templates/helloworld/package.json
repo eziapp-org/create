@@ -1,0 +1,16 @@
+{
+  "scripts": {
+    "dev": "eziapp-builder --mode debug",
+    "build": "eziapp-builder --mode release",
+    "build:windows": "eziapp-builder --mode release --platform windows",
+    "build:linux": "eziapp-builder --mode release --platform linux",
+    "build:macos": "eziapp-builder --mode release --platform macos"
+  },
+  "dependencies": {
+    "@eziapp-org/bridge": "^0.0.0-beta.1",
+    "@eziapp-org/builder": "^0.0.0-beta.1"
+  },
+  "devDependencies": {
+    "vite": "^7.2.2"
+  }
+}
