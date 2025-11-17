@@ -12,7 +12,7 @@ import { puts } from './src/utils';
 import chalk from 'chalk';
 
 async function main() {
-    label('☘  ' + chalk.bold('Select setup option:'));
+    label(chalk.green('☘  ') + chalk.bold('Select setup option:'));
     const setupOption = await options([
         chalk.blue('Hello World Demo'),
         chalk.green('From EziApp Template'),
