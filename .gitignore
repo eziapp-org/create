@@ -3,3 +3,4 @@ build/
 temp/
 dist/
 packed/
+templates/**/package-lock.json

@@ -14,7 +14,8 @@
         "!**/node_modules/",
         "!**/build/",
         "!**/temp/",
-        "!**/dist/"
+        "!**/dist/",
+        "!**/package-lock.json"
     ],
     "bin": {
         "create-eziapp": "dist/index.js"
