@@ -7,8 +7,8 @@
     "build:macos": "eziapp-builder --mode release --platform macos"
   },
   "dependencies": {
-    "@eziapp-org/bridge": "^0.0.0-beta.1",
-    "@eziapp-org/builder": "^0.0.0-beta.2"
+    "@eziapp-org/bridge": "latest",
+    "@eziapp-org/builder": "latest"
   },
   "devDependencies": {
     "vite": "^7.2.2"
